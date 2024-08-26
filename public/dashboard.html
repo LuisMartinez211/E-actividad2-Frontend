@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <nav class="bg-blue-500 p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 id="dashboardTitle" class="text-white text-2xl font-bold">Dashboard</h1>
+            <div id="adminMenu" class="flex space-x-4 hidden">
+                <button id="viewProductsBtn" class="text-white">Ver Productos</button>
+                <button id="manageProductsBtn" class="text-white">Gestionar Productos</button>
+                <button id="manageUsersBtn" class="text-white">Gestionar Usuarios</button>
+            </div>
+            <div id="userMenu" class="flex space-x-4 hidden">
+                <button id="favoritesBtn" class="text-white">Favoritos</button>
+                <button id="profileBtn" class="text-white">Perfil</button>
+            </div>
+            <button id="logoutBtn" class="text-white bg-red-500 py-2 px-4 rounded">Cerrar Sesión</button>
+        </div>
+    </nav>
+
+    <div class="container mx-auto mt-10">
+        <!-- Sección de Ver Productos -->
+        <section id="viewProductsSection" class="hidden">
+            <h2 class="text-3xl font-bold mb-6">Productos Disponibles</h2>
+            <div id="productsContainer" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <!-- Aquí se insertarán los productos -->
+            </div>
+        </section>
+
+        <!-- Sección de Gestionar Productos -->
+        <section id="manageProductsSection" class="hidden">
+            <h2 class="text-3xl font-bold mb-6">Gestionar Productos</h2>
+            <div class="mb-8">
+                <h3 class="text-xl font-bold mb-4">Añadir Nuevo Producto</h3>
+                <form id="productForm">
+                    <div class="mb-4">
+                        <label class="block text-gray-700" for="name">Nombre del Producto</label>
+                        <input class="w-full px-3 py-2 border rounded" type="text" id="name" required>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700" for="description">Descripción</label>
+                        <textarea class="w-full px-3 py-2 border rounded" id="description" required></textarea>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700" for="price">Precio</label>
+                        <input class="w-full px-3 py-2 border rounded" type="number" id="price" required>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700" for="category">Categoría</label>
+                        <input class="w-full px-3 py-2 border rounded" type="text" id="category">
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700" for="stock">Cantidad en Stock</label>
+                        <input class="w-full px-3 py-2 border rounded" type="number" id="stock" required>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700" for="image">Imagen del Producto</label>
+                        <input class="w-full px-3 py-2 border rounded" type="file" id="image">
+                    </div>
+                    <button class="w-full bg-green-500 text-white py-2 rounded hover:bg-green-600">Añadir Producto</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Sección de Gestionar Usuarios -->
+        <section id="manageUsersSection" class="hidden">
+            <h2 class="text-3xl font-bold mb-6">Gestionar Usuarios</h2>
+            <div id="usersContainer" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <!-- Aquí se insertarán los usuarios registrados -->
+            </div>
+        </section>
+
+        <!-- Sección de Favoritos -->
+        <section id="favoritesSection" class="hidden">
+            <h2 class="text-3xl font-bold mb-6">Mis Favoritos</h2>
+            <div id="favoritesContainer" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <!-- Aquí se insertarán los productos favoritos -->
+            </div>
+        </section>
+
+        <!-- Sección de Perfil -->
+        <section id="profileSection" class="hidden">
+            <h2 class="text-3xl font-bold mb-6">Perfil</h2>
+            <form id="profileForm">
+                <div class="mb-4">
+                    <label class="block text-gray-700" for="profileName">Nombre</label>
+                    <input class="w-full px-3 py-2 border rounded" type="text" id="profileName" required>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700" for="profileEmail">Email</label>
+                    <input class="w-full px-3 py-2 border rounded" type="email" id="profileEmail" required>
+                </div>
+                <button class="w-full bg-green-500 text-white py-2 rounded hover:bg-green-600">Actualizar Perfil</button>
+            </form>
+        </section>
+    </div>
+
+    <script src="../js/dashboard.js"></script>
+</body>
+</html>

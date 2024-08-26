@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <nav class="bg-blue-500 p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-white text-2xl font-bold">Tienda</h1>
+            <div class="flex space-x-4">
+                <a href="login.html" id="loginBtn" class="text-white">Iniciar Sesión</a>
+                <a href="register.html" id="registerBtn" class="text-white">Registrarse</a>
+                <button id="logoutBtn" class="text-white bg-red-500 py-2 px-4 rounded hidden">Cerrar Sesión</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mx-auto mt-10">
+        <h2 class="text-3xl font-bold mb-6">Productos Disponibles</h2>
+        <div id="productsContainer" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <!-- Aquí se insertarán los productos -->
+        </div>
+    </div>
+
+
+    <script src="../js/app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const role = localStorage.getItem('role');
+    
+            if (role === 'admin') {
+                // Redirigir al administrador al dashboard si es admin
+                window.location.href = 'dashboard.html';
+            }
+        });
+    </script>
+    
+</body>
+</html>

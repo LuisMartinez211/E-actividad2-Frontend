@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Favoritos</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <nav class="bg-blue-500 p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-white text-2xl font-bold">Mis Favoritos</h1>
+            <a href="index.html" class="text-white">Volver a la tienda</a>
+        </div>
+    </nav>
+
+    <div class="container mx-auto mt-10">
+        <h2 class="text-3xl font-bold mb-6">Productos Favoritos</h2>
+        <div id="favoritesContainer" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <!-- Aquí se insertarán los productos favoritos -->
+        </div>
+    </div>
+
+    <script src="../js/favorites.js"></script>
+</body>
+</html>
